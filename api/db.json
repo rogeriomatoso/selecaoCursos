@@ -1,0 +1,19 @@
+{
+    "itens": [
+        {
+            "id": "1",
+            "description": "Arroz",
+            "categoria": "Não Perecível"
+        },
+        {
+            "id": "2",
+            "description": "Farinha",
+            "categoria": "Não Perecível"
+        },
+        {
+            "id": "3",
+            "description": "Alface",
+            "categoria": "Perecível"
+        }
+    ]
+}
