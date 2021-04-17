@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList} from 'react-native';
+import { StyleSheet, Text, View, FlatList, ScrollView} from 'react-native';
 import api from './src/services/api';
 import Produtos from './src/components/Produtos';
 
@@ -21,14 +21,17 @@ export default class App extends Component{
   render(){   
 
     return (
-      <View style={styles.container}>        
-        <FlatList
-          data={this.state.produtos}
-          keyExtractor={item=> item.id.toString()}
-          renderItem={({item})=> <Produtos data={item}/>}
-        />       
-      </View>
-      
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>       
+          <FlatList
+            data={this.state.produtos}
+            keyExtractor={item=> item.id.toString()}
+            renderItem={({item})=> <Produtos description={item.description} 
+                                    imagem={item.imagem} largura={100} altura={100}
+                                    categoria={item.categoria}/>}          
+          />       
+        </View>
+        </ScrollView>
     );
   }
 }
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',    
    justifyContent: 'center',
-   backgroundColor:'#DDD'
+   backgroundColor:'#CBCDCA'
   },
  
 });

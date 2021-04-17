@@ -3,17 +3,32 @@
         {
             "id": "1",
             "description": "Arroz",
-            "categoria": "Não Perecível"
+            "categoria": "Não Perecível",
+            "imagem": "https://irga.rs.gov.br/upload/recortes/carga20180506/09110613_22271_GDO.jpg"
         },
         {
             "id": "2",
             "description": "Farinha",
-            "categoria": "Não Perecível"
+            "categoria": "Não Perecível",
+            "imagem": "https://i1.wp.com/emporiointegrale.com.br/wp-content/uploads/2018/08/farinha-de-mandioca-2.jpg?fit=1000%2C1000&ssl=1"
         },
         {
             "id": "3",
+            "description": "Feijão",
+            "categoria": "Não Perecível",
+            "imagem": "https://http2.mlstatic.com/D_NQ_NP_751907-MLB44753342155_012021-O.webp"
+        },
+        {
+            "id": "4",
             "description": "Alface",
-            "categoria": "Perecível"
+            "categoria": "Perecível",
+            "imagem": "https://imagens.reformaagraria.pt/loja-agricola/produtos/grandes/1054-1968-1586547943.jpg"
+        },
+        {
+            "id": "5",
+            "description": "Tomate",
+            "categoria": "Perecível",
+            "imagem": "https://imagens.reformaagraria.pt/plantas/plantas/grandes/tomate_1.jpg"
         }
     ]
 }
