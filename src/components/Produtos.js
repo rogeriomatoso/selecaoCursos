@@ -38,14 +38,12 @@ const styles = StyleSheet.create({
         padding: 20
     },
     textCard:{
-        flexDirection: 'column',
-        //alignContent:'flex-start',
+        flexDirection: 'column',        
         fontSize: 28, 
         fontFamily: 'arial',
         marginBottom: 50,
     },
-    textCategoria:{
-        alignContent: 'flex-end',
+    textCategoria:{        
         padding: 5,
         borderRadius: 5,
        // width: 100, 

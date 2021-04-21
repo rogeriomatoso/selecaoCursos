@@ -1,38 +1,46 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, FlatList, ScrollView, ActivityIndicator} from 'react-native';
 import api from './src/services/api';
-import Produtos from './src/components/Produtos';
+import Produtos2 from './src/components/Produtos2';
 
 
 export default class App extends Component{ 
   constructor(props){
     super(props);
     this.state ={ 
-      produtos : []
+      produtos : [],
+      loading: true
     };
     
   } 
  async componentDidMount(){
      const response = await api.get('itens')
-      this.setState({ produtos: response.data})
+      this.setState({ produtos: response.data, loading: false})
      
   }
     
   render(){   
-
-    return (
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>       
-          <FlatList
-            data={this.state.produtos}
-            keyExtractor={item=> item.id.toString()}
-            renderItem={({item})=> <Produtos description={item.description} 
-                                    imagem={item.imagem} largura={100} altura={100}
-                                    categoria={item.categoria}/>}          
-          />       
+    if(this.state.loading ){
+      return(
+        <View style={{alignItems: 'center', justifyContent:'center', flex: 1}}>
+          <ActivityIndicator color='#3398F1' size={40}/>
         </View>
-        </ScrollView>
-    );
+      )
+    }else{
+      return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.container}>       
+            <FlatList
+              data={this.state.produtos}
+              keyExtractor={item=> item.id.toString()}
+              renderItem={({item})=> <Produtos2 data={item}/>}          
+            />       
+          </View>
+          </ScrollView>
+      );
+    }
+   
+    
   }
 }
 
